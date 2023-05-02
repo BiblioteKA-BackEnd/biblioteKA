@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dotenv
 from django.core.management.utils import get_random_secret_key
+from datetime import timedelta
 
 dotenv.load_dotenv()
 
@@ -136,3 +137,11 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+}
+
+# AUTH_USER_MODEL = "users.User"
