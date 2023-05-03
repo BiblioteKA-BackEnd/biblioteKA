@@ -48,7 +48,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = ["rest_framework"]
 
 MY_APPS = [
-    "users"
+    "users",
     "books",
     "lending",
     "follows"
