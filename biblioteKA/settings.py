@@ -47,7 +47,9 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = ["rest_framework"]
 
-MY_APPS = []
+MY_APPS = [
+    "users"
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
 
@@ -144,4 +146,4 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
 
-# AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "users.User"
