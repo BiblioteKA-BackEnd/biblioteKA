@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+
 class User(AbstractUser):
     username = models.CharField(max_length=50, unique=True)
     email = models.EmailField(
@@ -13,3 +14,8 @@ class User(AbstractUser):
     is_late = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    # follow = models.ForeignKey(
+    #   "follow.Follow",
+    #   on_delete=models.CASCADE,
+    #   related_name="follow"
+    # )
