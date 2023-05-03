@@ -8,12 +8,6 @@ class Book(models.Model):
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
 
-    follow = models.ForeignKey(
-        "follows.Follow",
-        on_delete=models.CASCADE,
-        related_name="books",
-    )
-
 
 class Copy(models.Model):
     class Meta:
