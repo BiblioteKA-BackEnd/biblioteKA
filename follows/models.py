@@ -7,7 +7,7 @@ class Follow(models.Model):
     user = models.ForeignKey(
         "users.User",
         on_delete=models.PROTECT,
-        related_name="user_book_follows"
+        related_name="user_follows"
     )
     book = models.ForeignKey(
         "books.Book",
