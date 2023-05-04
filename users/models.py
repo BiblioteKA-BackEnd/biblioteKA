@@ -14,8 +14,8 @@ class User(AbstractUser):
     is_late = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
-    # follow = models.ForeignKey(
-    #   "follow.Follow",
-    #   on_delete=models.CASCADE,
-    #   related_name="follow"
-    # )
+    followed = models.ManyToManyField(
+        "books.Book",
+        through="follows.Follow",
+        related_name="followed"
+    )
