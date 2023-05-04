@@ -8,9 +8,9 @@ class UserSerializer(serializers.ModelSerializer):
         for key in validated_data.items():
             if key == "is_employe":
                 return User.objects.create_superuser(**validated_data)
-        
+
         return User.objects.create_user(**validated_data)
-    
+
     def update(self, instance, validated_data: dict) -> User:
         for key, value in validated_data.items():
             if key == "password":
@@ -21,13 +21,13 @@ class UserSerializer(serializers.ModelSerializer):
         instance.save()
 
         return instance
-    
+
     email = serializers.EmailField(
         validators=[UniqueValidator(
                     queryset=User.objects.all(),
                     message="This field must be unique.")],
     )
-    
+
     class Meta:
         model = User
         fields = [
