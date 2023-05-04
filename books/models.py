@@ -14,10 +14,10 @@ class Copy(models.Model):
         ordering = ["id"]
 
     title = models.CharField(max_length=50)
-    is_available = models.BooleanField()
+    is_available = models.BooleanField(null=True, default=False)
 
     book = models.ForeignKey(
         Book,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="copies",
     )
