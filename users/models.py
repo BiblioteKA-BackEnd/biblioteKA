@@ -13,7 +13,7 @@ class User(AbstractUser):
     is_employe = models.BooleanField(default=False)
     is_late = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     followed = models.ManyToManyField(
         "books.Book",
         through="follows.Follow",
