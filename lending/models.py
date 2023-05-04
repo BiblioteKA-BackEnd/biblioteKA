@@ -10,4 +10,4 @@ class Lending(models.Model):
     )
     copy_id = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-    devolution_at = models.DateTimeField(timezone.now() + timezone.timedelta(hours=48))
+    devolution_at = models.DateTimeField(default=timezone.now() + timezone.timedelta(hours=48))
