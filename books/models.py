@@ -22,3 +22,8 @@ class Copy(models.Model):
         on_delete=models.PROTECT,
         related_name="copies",
     )
+    lent_user = models.ManyToManyField(
+        "users.User",
+        through="lending.Lending",
+        related_name="lent_copy"
+    )
