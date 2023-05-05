@@ -8,6 +8,10 @@ class Lending(models.Model):
     user_id = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="user"
     )
+    copy_id = models.ForeignKey(
+        "books.Copy", on_delete=models.CASCADE, related_name="copy"
+    )
+
     copy_id = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     devolution_at = models.DateTimeField(default=timezone.now() + timezone.timedelta(hours=48))
