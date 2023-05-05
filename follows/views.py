@@ -1,7 +1,7 @@
 from follows.models import Follow
 from follows.serializers import FollowSerializer
 from follows.permissions import IsAuthenticatedAndNotEmploye
-from users.permissions import IsEmployeOrUserOwner
+from users.permissions import IsAuthenticated, IsEmployeOrUserOwner
 from rest_framework import generics
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
@@ -23,7 +23,7 @@ class FollowView(generics.CreateAPIView):
 
 class FollowDetailedView(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsEmployeOrUserOwner]
+    permission_classes = [IsAuthenticated, IsEmployeOrUserOwner]
 
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer
