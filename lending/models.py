@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
-
 
 class Lending(models.Model):
+    class Meta:
+        ordering = ["id"]
+
     created_at = models.DateTimeField(auto_now_add=True)
     devolution_at = models.DateTimeField(default=timezone.now() + timezone.timedelta(hours=48))
 
