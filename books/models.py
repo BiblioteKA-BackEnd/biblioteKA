@@ -7,6 +7,7 @@ class Book(models.Model):
 
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
+    copy = models.IntegerField(default=0)
 
 
 class Copy(models.Model):
@@ -14,10 +15,15 @@ class Copy(models.Model):
         ordering = ["id"]
 
     title = models.CharField(max_length=50)
-    is_available = models.BooleanField(null=True, default=False)
+    is_available = models.BooleanField(null=True, default=True)
 
     book = models.ForeignKey(
         Book,
         on_delete=models.PROTECT,
         related_name="copies",
+    )
+    lent_user = models.ManyToManyField(
+        "users.User",
+        through="lending.Lending",
+        related_name="lent_copy"
     )
