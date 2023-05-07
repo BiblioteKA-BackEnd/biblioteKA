@@ -12,4 +12,6 @@ class Lending(models.Model):
         "books.Copy", on_delete=models.PROTECT, related_name="copy_lending"
     )
     created_at = models.DateTimeField(auto_now_add=True)
-    devolution_at = models.DateTimeField(default=timezone.now() + timezone.timedelta(hours=48))
+    devolution_at = models.DateTimeField(
+        default=timezone.now() + timezone.timedelta(hours=48)
+    )
