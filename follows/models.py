@@ -2,7 +2,10 @@ from django.db import models
 
 
 class Follow(models.Model):
-    email = models.EmailField(max_length=120)
+    class Meta:
+        ordering = ["id"]
+
+    email = models.EmailField(max_length=120, blank=True)
 
     user = models.ForeignKey(
         "users.User",

@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
                 ),
                 ("title", models.CharField(max_length=50)),
                 ("author", models.CharField(max_length=50)),
+                ("copy", models.IntegerField(default=0)),
             ],
             options={
                 "ordering": ["id"],
@@ -42,7 +43,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("title", models.CharField(max_length=50)),
-                ("is_available", models.BooleanField(default=False, null=True)),
+                ("is_available", models.BooleanField(default=True, null=True)),
                 (
                     "book",
                     models.ForeignKey(

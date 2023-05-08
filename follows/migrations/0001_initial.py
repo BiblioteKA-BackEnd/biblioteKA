@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("email", models.EmailField(max_length=120)),
+                ("email", models.EmailField(blank=True, max_length=120)),
                 (
                     "book",
                     models.ForeignKey(
@@ -34,5 +34,8 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
+            options={
+                "ordering": ["id"],
+            },
         ),
     ]

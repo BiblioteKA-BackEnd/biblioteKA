@@ -1,5 +1,8 @@
 from rest_framework import serializers
 from follows.models import Follow
+from users.models import User
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 class FollowSerializer(serializers.ModelSerializer):

@@ -73,9 +73,9 @@ class Migration(migrations.Migration):
                 ("created_at", models.DateTimeField(auto_now_add=True)),
                 ("updated_at", models.DateTimeField(auto_now=True)),
                 (
-                    "followed",
+                    "followed_book",
                     models.ManyToManyField(
-                        related_name="followed",
+                        related_name="followed_user",
                         through="follows.Follow",
                         to="books.book",
                     ),
@@ -104,9 +104,7 @@ class Migration(migrations.Migration):
                 ),
             ],
             options={
-                "verbose_name": "user",
-                "verbose_name_plural": "users",
-                "abstract": False,
+                "ordering": ["id"],
             },
             managers=[
                 ("objects", django.contrib.auth.models.UserManager()),
