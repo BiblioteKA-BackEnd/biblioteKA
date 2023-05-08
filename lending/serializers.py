@@ -19,3 +19,5 @@ class LendingSerializer(serializers.ModelSerializer):
             lending_obj.devolution_at += timedelta(days=days_extra)
             lending_obj.save()
         return lending_obj
+    
+

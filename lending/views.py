@@ -3,6 +3,7 @@ from rest_framework import generics
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from follows.permissions import IsAuthenticatedAndNotEmploye
+from lending.models import Lending
 from lending.serializers import LendingSerializer
 
 # Create your views here.
@@ -13,3 +14,11 @@ class LendingView(generics.CreateAPIView):
     permission_classes = [IsAuthenticatedAndNotEmploye]
 
     serializer_class = LendingSerializer
+
+class LendingDetailView(generics.RetrieveAPIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticatedAndNotEmploye]
+
+    queryset = Lending.objects.all()
+    serializer_class = LendingSerializer
+
