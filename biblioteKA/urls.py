@@ -21,5 +21,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("users.urls")),
     path("api/", include("follows.urls")),
+<<<<<<< HEAD
+    path("api/", include("lending.urls"))
+=======
     path("api/", include("books.urls")),
+>>>>>>> 583a37003161b9933d91490282c386fcefcc79af
 ]
