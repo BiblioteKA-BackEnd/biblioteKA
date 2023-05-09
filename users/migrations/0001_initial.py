@@ -12,6 +12,7 @@ class Migration(migrations.Migration):
         ("follows", "0001_initial"),
         ("books", "0001_initial"),
         ("auth", "0012_alter_user_first_name_max_length"),
+        ("follows", "0001_initial"),
     ]
 
     operations = [

@@ -10,9 +10,9 @@ class Lending(models.Model):
         default=timezone.now() + timezone.timedelta(hours=48)
     )
 
-    user_id = models.ForeignKey(
+    user = models.ForeignKey(
         "users.User", on_delete=models.PROTECT, related_name="user_lending"
     )
-    copy_id = models.ForeignKey(
+    copy = models.ForeignKey(
         "books.Copy", on_delete=models.PROTECT, related_name="copy_lending"
     )
