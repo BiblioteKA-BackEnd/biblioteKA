@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 class Lending(models.Model):
     class Meta:
         ordering = ["id"]
