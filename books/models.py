@@ -19,7 +19,7 @@ class Copy(models.Model):
 
     book = models.ForeignKey(
         Book,
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name="copies",
     )
     lent_user = models.ManyToManyField(

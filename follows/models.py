@@ -9,11 +9,12 @@ class Follow(models.Model):
 
     user = models.ForeignKey(
         "users.User",
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name="user_follows"
     )
     book = models.ForeignKey(
         "books.Book",
-        on_delete=models.PROTECT,
-        related_name="book_follows"
+        on_delete=models.SET_NULL,
+        related_name="book_follows",
+        null=True
     )
